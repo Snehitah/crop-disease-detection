@@ -3,8 +3,12 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 import os
+from flask_cors import CORS 
+
 
 app = Flask(__name__)
+CORS(app)
+
 
 # Load the model
 interpreter = tf.lite.Interpreter(model_path="model.tflite")
